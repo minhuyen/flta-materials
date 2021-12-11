@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'screens/explore_screen.dart';
-import 'screens/recipes_screen.dart';
+import 'card1.dart';
+import 'card2.dart';
+import 'card3.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -12,10 +13,10 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int _selectedIndex = 0;
 
-  static List<Widget> pages = <Widget>[
-    ExploreScreen(),
-    RecipesScreen(),
-    Container(color: Colors.blue),
+  static List<Widget> pages = [
+    const Card1(),
+    const Card2(),
+    const Card3(),
   ];
 
   void _onItemTapped(int index) {
@@ -40,17 +41,17 @@ class _HomeState extends State<Home> {
         onTap: _onItemTapped,
         items: <BottomNavigationBarItem>[
           const BottomNavigationBarItem(
-            icon: Icon(Icons.explore),
-            label: 'Explore',
+            icon: Icon(Icons.card_giftcard),
+            label: 'Card',
           ),
           const BottomNavigationBarItem(
-            icon: Icon(Icons.book),
-            label: 'Recipes',
+            icon: Icon(Icons.card_giftcard),
+            label: 'Card2',
           ),
           const BottomNavigationBarItem(
-            icon: Icon(Icons.list),
-            label: 'To Buy',
-          ),
+            icon: Icon(Icons.card_giftcard),
+            label: 'Card3',
+          )
         ],
       ),
     );
